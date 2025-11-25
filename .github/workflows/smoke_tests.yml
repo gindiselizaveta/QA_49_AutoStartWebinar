@@ -30,4 +30,4 @@ jobs:
           name: reports
           path:
             /build/reports
-            /build/test-results/
+            **/build/test-results/
