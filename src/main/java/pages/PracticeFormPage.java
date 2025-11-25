@@ -44,6 +44,16 @@ public class PracticeFormPage extends BasePage {
     @FindBy(id ="submit" )
     WebElement btnSubmit;
 
+    @FindBy(id="example-modal-sizes-title-lg")
+    WebElement modalMessage;
+
+    public boolean validateModalMessage(){
+        return validateTextInElement(modalMessage,"Thanks for submitting the form");
+    }
+
+    public boolean validateModalMessageNegative(){
+        return validateTextInElement(modalMessage,"Error");
+    }
 
     public void typePracticeForm(Student student) {
         hideBanner();
