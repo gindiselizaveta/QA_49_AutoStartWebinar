@@ -20,7 +20,7 @@ public class PracticeFormTests extends AppManager {
     SoftAssert softAssert = new SoftAssert();
 
 
-    @Test
+    @Test(groups = "smoke")
     public void practiceFormPositiveTest() {
 
         List<Hobbies> hobbies = new ArrayList<>();
@@ -43,7 +43,7 @@ public class PracticeFormTests extends AppManager {
         Assert.assertTrue(new PracticeFormPage(getDriver()).validateModalMessage());
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void practiceFormPositiveTestWithSoftAssert() {
 
         List<Hobbies> hobbies = new ArrayList<>();
@@ -65,8 +65,8 @@ public class PracticeFormTests extends AppManager {
         softAssert.assertTrue(new PracticeFormPage(getDriver()).validateModalMessage(), "validate Modal Message");
         System.out.println("test passed");
 
-        softAssert.assertTrue(getDriver().findElement(By.xpath("//tbody/tr/td[last()]")).getText().contains(student.getLastName()),"last name validation");
-        softAssert.assertTrue(getDriver().findElement(By.xpath("//tbody/tr/td[last()]")).getText().contains(student.getFirstName()),"first name validation");
+        softAssert.assertTrue(getDriver().findElement(By.xpath("//tbody/tr/td[last()]")).getText().contains(student.getLastName()), "last name validation");
+        softAssert.assertTrue(getDriver().findElement(By.xpath("//tbody/tr/td[last()]")).getText().contains(student.getFirstName()), "first name validation");
 
         softAssert.assertAll();
     }
